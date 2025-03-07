@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Project Generator</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate a Job Project</h1>
+
+        <form method="POST">
+            <label for="user_input">Enter Job Post Details</label><br>
+            <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea><br>
+            <button type="submit">Generate Project</button>
+        </form>
+
+        {% if result %}
+            <h2>Generated Project:</h2>
+            <p>{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
